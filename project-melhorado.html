@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B0B0B">
+  <meta property="og:type" content="website">
+  
+  <title>Projeto — NOWHERE STUDIO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <style>
+    :root {
+      --black: #0B0B0B;
+      --pure-black: #000000;
+      --orange: #FF5A00;
+      --white: #FFFFFF;
+      --white-70: rgba(255, 255, 255, 0.68);
+      --white-45: rgba(255, 255, 255, 0.42);
+      --white-10: rgba(255, 255, 255, 0.09);
+      --white-06: rgba(255, 255, 255, 0.05);
+      --display: 'Space Grotesk', sans-serif;
+      --body: 'Inter', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --container: 1280px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--black);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img, svg, video {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ::selection {
+      background: var(--orange);
+      color: var(--black);
+    }
+
+    .wrap {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    @media (max-width: 860px) {
+      .wrap {
+        padding: 0 24px;
+      }
+    }
+
+    /* ===== HEADER ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      padding: 20px 0;
+      background: rgba(11, 11, 11, 0.72);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      border-bottom: 1px solid var(--white-10);
+    }
+
+    .nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-logo img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.35s var(--ease);
+    }
+
+    .nav-logo span {
+      transition: color 0.35s var(--ease);
+    }
+
+    .nav-logo:hover img {
+      transform: scale(1.08);
+    }
+
+    .nav-logo:hover span {
+      color: var(--orange);
+    }
+
+    .nav-back {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white-70);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s var(--ease);
+    }
+
+    .nav-back:hover {
+      color: var(--orange);
+    }
+
+    /* ===== PROJECT HERO ===== */
+    .p-hero {
+      padding: 150px 0 60px;
+    }
+
+    .p-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .p-eyebrow .line {
+      width: 24px;
+      height: 1px;
+      background: var(--orange);
+    }
+
+    .p-title {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(34px, 6vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      max-width: 900px;
+      margin-bottom: 44px;
+    }
+
+    .p-meta-row {
+      display: flex;
+      gap: 56px;
+      flex-wrap: wrap;
+      padding-top: 36px;
+      border-top: 1px solid var(--white-10);
+    }
+
+    .p-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .p-meta-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white-45);
+    }
+
+    .p-meta-value {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 17px;
+    }
+
+    /* ===== MEDIA SECTIONS ===== */
+    .p-cover {
+      margin: 100px 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .p-cover img,
+    .p-cover video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .p-cover video {
+      background: var(--black);
+    }
+
+    /* ===== BODY CONTENT ===== */
+    .p-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      padding-bottom: 100px;
+      border-bottom: 1px solid var(--white-10);
+    }
+
+    @media (max-width: 860px) {
+      .p-body {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    .p-desc-title {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white-45);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .p-desc-text {
+      font-size: 19px;
+      line-height: 1.65;
+      color: var(--white-70);
+      max-width: 520px;
+    }
+
+    .p-feedback {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 1.45;
+      letter-spacing: -0.005em;
+    }
+
+    .p-feedback-author {
+      margin-top: 24px;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--white-45);
+    }
+
+    .p-feedback-author strong {
+      color: var(--white);
+      font-family: var(--body);
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    /* ===== GALLERY ===== */
+    .p-gallery {
+      padding: 100px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .p-gallery img {
+      width: 100%;
+      border-radius: 4px;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .p-gallery img:nth-child(1) { animation-delay: 0.1s; }
+    .p-gallery img:nth-child(2) { animation-delay: 0.2s; }
+    .p-gallery img:nth-child(3) { animation-delay: 0.3s; }
+    .p-gallery img:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== NAVIGATION BETWEEN PROJECTS ===== */
+    .p-nav-projects {
+      padding: 80px 0 100px;
+      border-top: 1px solid var(--white-10);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .p-nav-projects {
+        flex-direction: column;
+      }
+    }
+
+    .p-nav-link {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white-70);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.3s var(--ease);
+    }
+
+    .p-nav-link:hover {
+      color: var(--orange);
+    }
+
+    .p-nav-link-next {
+      margin-left: auto;
+    }
+
+    @media (max-width: 860px) {
+      .p-nav-link-next {
+        margin-left: 0;
+      }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid var(--white-10);
+      padding: 48px 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--white-45);
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== LOADING STATE ===== */
+    .loading-state {
+      padding: 200px 0;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--white-45);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <nav class="nav">
+    <div class="wrap">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo-icon.svg" alt="NOWHERE Studio" onerror="this.style.display='none'">
+        <span>NOWHERE</span>
+      </a>
+      <a href="index.html#trabalhos" class="nav-back">← Todos os Trabalhos</a>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="projectRoot">
+    <div class="loading-state">Carregando projeto…</div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-bottom">
+        <span>© 2026 NOWHERE STUDIO. Todos os direitos reservados.</span>
+        <span>Welcome to the nowhere that means everything.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    class ProjectLoader {
+      constructor() {
+        this.projects = [];
+        this.currentProject = null;
+      }
+
+      async loadProjects() {
+        try {
+          const response = await fetch('portfolio.json');
+          if (!response.ok) throw new Error('Falha ao carregar portfolio.json');
+          this.projects = await response.json();
+          return this.projects;
+        } catch (error) {
+          console.error('Erro ao carregar projetos:', error);
+          this.showError('Não foi possível carregar o projeto.');
+          return [];
+        }
+      }
+
+      getProjectId() {
+        return new URLSearchParams(window.location.search).get('id');
+      }
+
+      getCurrentProject() {
+        const id = this.getProjectId();
+        return this.projects.find(p => p.id === id) || this.projects[0];
+      }
+
+      getProjectIndex(project) {
+        return this.projects.findIndex(p => p.id === project.id);
+      }
+
+      getNextProject(project) {
+        const idx = this.getProjectIndex(project);
+        return this.projects[(idx + 1) % this.projects.length];
+      }
+
+      getPreviousProject(project) {
+        const idx = this.getProjectIndex(project);
+        return this.projects[(idx - 1 + this.projects.length) % this.projects.length];
+      }
+
+      updateMetaTags(project) {
+        document.title = `${project.titulo} — NOWHERE STUDIO`;
+        
+        const ogImage = project.cover || project.thumb;
+        let ogImageMeta = document.querySelector('meta[property="og:image"]');
+        if (!ogImageMeta) {
+          ogImageMeta = document.createElement('meta');
+          ogImageMeta.setAttribute('property', 'og:image');
+          document.head.appendChild(ogImageMeta);
+        }
+        ogImageMeta.setAttribute('content', ogImage);
+      }
+
+      renderProject(project) {
+        const root = document.getElementById('projectRoot');
+        if (!root) return;
+
+        const next = this.getNextProject(project);
+        const previous = this.getPreviousProject(project);
+
+        this.updateMetaTags(project);
+
+        root.innerHTML = `
+          <section class="p-hero">
+            <div class="wrap">
+              <div class="p-eyebrow">
+                <span class="line"></span>
+                ${project.categoria}
+              </div>
+              <h1 class="p-title">${project.titulo}</h1>
+              <div class="p-meta-row">
+                <div class="p-meta">
+                  <span class="p-meta-label">Cliente</span>
+                  <span class="p-meta-value">${project.cliente}</span>
+                </div>
+                <div class="p-meta">
+                  <span class="p-meta-label">Categoria</span>
+                  <span class="p-meta-value">${project.categoria}</span>
+                </div>
+                <div class="p-meta">
+                  <span class="p-meta-label">Ano</span>
+                  <span class="p-meta-value">${project.ano}</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="wrap">
+            ${this.renderCover(project)}
+
+            <div class="p-body">
+              <div>
+                <label class="p-desc-title">Sobre o Projeto</label>
+                <p class="p-desc-text">${project.descricao}</p>
+              </div>
+              <div>
+                <label class="p-desc-title">Depoimento</label>
+                <p class="p-feedback">"${project.feedback}"</p>
+                <div class="p-feedback-author">
+                  <strong>${project.feedbackAutor}</strong> — ${project.feedbackCargo}
+                </div>
+              </div>
+            </div>
+
+            ${this.renderGallery(project)}
+            ${this.renderNavigation(project, next, previous)}
+          </div>
+        `;
+      }
+
+      renderCover(project) {
+        const cover = project.cover || project.thumb;
+        return `
+          <div class="p-cover">
+            <img 
+              src="${cover}" 
+              alt="${project.titulo}"
+              loading="eager"
+              onerror="this.src='assets/placeholder.jpg'"
+            >
+          </div>
+        `;
+      }
+
+      renderGallery(project) {
+        if (!project.gallery || project.gallery.length === 0) {
+          return '';
+        }
+
+        return `
+          <div class="p-gallery">
+            ${project.gallery.map((src, i) => `
+              <img 
+                src="${src}" 
+                alt="${project.titulo} - ${i + 1}"
+                loading="lazy"
+                onerror="this.src='assets/placeholder.jpg'"
+              >
+            `).join('')}
+          </div>
+        `;
+      }
+
+      renderNavigation(project, next, previous) {
+        return `
+          <div class="p-nav-projects">
+            <a href="index.html#trabalhos" class="p-nav-link">
+              ← Todos os Trabalhos
+            </a>
+            <a href="project.html?id=${encodeURIComponent(next.id)}" class="p-nav-link p-nav-link-next">
+              Próximo: ${next.titulo} →
+            </a>
+          </div>
+        `;
+      }
+
+      showError(message) {
+        const root = document.getElementById('projectRoot');
+        if (root) {
+          root.innerHTML = `<div class="loading-state">${message}</div>`;
+        }
+      }
+
+      async initialize() {
+        const projects = await this.loadProjects();
+        if (projects.length === 0) return;
+
+        const project = this.getCurrentProject();
+        if (!project) {
+          this.showError('Projeto não encontrado.');
+          return;
+        }
+
+        this.currentProject = project;
+        this.renderProject(project);
+      }
+    }
+
+    // Inicializar quando DOM estiver pronto
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        const loader = new ProjectLoader();
+        loader.initialize();
+      });
+    } else {
+      const loader = new ProjectLoader();
+      loader.initialize();
+    }
+  </script>
+</body>
+</html>
