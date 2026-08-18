@@ -371,23 +371,30 @@
       }
 
       renderGallery(project) {
-        if (!project.gallery || project.gallery.length === 0) {
-          return '';
-        }
+  if (!project.gallery || project.gallery.length === 0) {
+    return '';
+  }
+
+  return `
+    <div class="p-gallery">
+      ${project.gallery.map((src, i) => {
+        const imagePath = src.startsWith('/')
+          ? src
+          : '/' + src;
 
         return `
-          <div class="p-gallery">
-            ${project.gallery.map((src, i) => `
-              <img
-                src="${src}"
-                alt="${project.titulo} - ${i + 1}"
-                loading="lazy"
-                onerror="this.src='assets/placeholder.jpg'"
-              >
-            `).join('')}
-          </div>
+          <figure class="p-gallery-item">
+            <img
+              src="${imagePath}"
+              alt="${project.titulo} — imagem ${i + 1}"
+              loading="lazy"
+            >
+          </figure>
         `;
-      }
+      }).join('')}
+    </div>
+  `;
+}
 
       renderNavigation(project, next, previous) {
         return `
