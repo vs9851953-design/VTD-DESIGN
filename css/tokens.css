@@ -1,0 +1,17 @@
+:root {
+  --black: #0a0a0a;
+  --pure-black: #000;
+  --orange: #ff5a00;
+  --white: #fff;
+  --white-80: rgba(255,255,255,.80);
+  --white-70: rgba(255,255,255,.68);
+  --white-45: rgba(255,255,255,.42);
+  --white-20: rgba(255,255,255,.18);
+  --white-10: rgba(255,255,255,.09);
+  --white-06: rgba(255,255,255,.05);
+  --display: 'Space Grotesk', sans-serif;
+  --body: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --ease: cubic-bezier(.16,1,.3,1);
+  --container: 1280px;
+}
