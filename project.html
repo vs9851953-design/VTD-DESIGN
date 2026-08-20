@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B0B0B">
+  <meta property="og:type" content="website">
+
+  <title>Projeto — NOWHERE STUDIO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    /* Estilos específicos da página de detalhe de projeto */
+
+    .p-hero {
+      padding: 150px 0 60px;
+    }
+
+    .p-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .p-eyebrow .line {
+      width: 24px;
+      height: 1px;
+      background: var(--orange);
+    }
+
+    .p-title {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(34px, 6vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      max-width: 900px;
+      margin-bottom: 44px;
+    }
+
+    .p-meta-row {
+      display: flex;
+      gap: 56px;
+      flex-wrap: wrap;
+      padding-top: 36px;
+      border-top: 1px solid var(--white-10);
+    }
+
+    .p-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .p-meta-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white-45);
+    }
+
+    .p-meta-value {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 17px;
+    }
+
+    .p-cover {
+      margin: 100px 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .p-cover img,
+    .p-cover video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .p-cover video {
+      background: var(--black);
+    }
+
+    .p-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      padding-bottom: 100px;
+      border-bottom: 1px solid var(--white-10);
+    }
+
+    @media (max-width: 860px) {
+      .p-body {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    .p-desc-title {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white-45);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .p-desc-text {
+      font-size: 19px;
+      line-height: 1.65;
+      color: var(--white-70);
+      max-width: 520px;
+    }
+
+    .p-feedback {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 1.45;
+      letter-spacing: -0.005em;
+    }
+
+    .p-feedback-author {
+      margin-top: 24px;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--white-45);
+    }
+
+    .p-feedback-author strong {
+      color: var(--white);
+      font-family: var(--body);
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    .p-gallery {
+      padding: 100px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .p-gallery img {
+      width: 100%;
+      border-radius: 4px;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .p-gallery img:nth-child(1) { animation-delay: 0.1s; }
+    .p-gallery img:nth-child(2) { animation-delay: 0.2s; }
+    .p-gallery img:nth-child(3) { animation-delay: 0.3s; }
+    .p-gallery img:nth-child(4) { animation-delay: 0.4s; }
+
+    .p-nav-projects {
+      padding: 80px 0 100px;
+      border-top: 1px solid var(--white-10);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .p-nav-projects {
+        flex-direction: column;
+      }
+    }
+
+    .p-nav-link {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white-70);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.3s var(--ease);
+    }
+
+    .p-nav-link:hover {
+      color: var(--orange);
+    }
+
+    .p-nav-link-next {
+      margin-left: auto;
+    }
+
+    @media (max-width: 860px) {
+      .p-nav-link-next {
+        margin-left: 0;
+      }
+    }
+
+    /* ADDED: project parallax */
+    .p-parallax{position:relative;height:min(72vh,760px);min-height:420px;margin:100px 0;overflow:hidden;border-radius:4px;background:#080808;isolation:isolate}
+    .p-parallax-layer{position:absolute;inset:-10%;width:120%;height:120%;object-fit:cover;will-change:transform;pointer-events:none}
+    .p-parallax-background{z-index:1}.p-parallax-middle{z-index:2}.p-parallax-foreground{z-index:3}
+    .p-parallax::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,.05),rgba(0,0,0,.15))}
+    /* ADDED: gallery */
+    .p-gallery{padding:100px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+    .p-gallery-item{position:relative;overflow:hidden;border-radius:4px;cursor:pointer;background:#0b0b0b;aspect-ratio:4/3;border:0;padding:0;transform:translateZ(0);transition:transform .35s ease,box-shadow .35s ease;will-change:transform}
+    .p-gallery-item:hover{box-shadow:0 18px 50px rgba(0,0,0,.28)}
+    .p-gallery-item img,.p-gallery-item video{width:100%;height:100%;object-fit:cover;display:block}.p-gallery-item video{background:#000}
+    .p-gallery-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border:1px solid rgba(255,255,255,.5);border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.35);pointer-events:none}
+    .p-gallery-play:after{content:"";margin-left:4px;width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:12px solid #fff}
+    .p-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:30px;background:rgba(0,0,0,.88);backdrop-filter:blur(8px)}
+    .p-lightbox.is-open{display:flex}.p-lightbox-content{position:relative;max-width:min(1200px,94vw);max-height:90vh;display:flex;align-items:center;justify-content:center}
+    .p-lightbox-content img,.p-lightbox-content video{display:block;max-width:94vw;max-height:88vh;width:auto;height:auto;object-fit:contain;border-radius:3px}
+    .p-lightbox-close{position:fixed;top:22px;right:26px;width:42px;height:42px;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:24px;cursor:pointer;display:grid;place-items:center;z-index:2}
+    .p-lightbox-close:hover{border-color:var(--orange);color:var(--orange)}
+    @media(max-width:860px){.p-gallery{grid-template-columns:1fr}.p-parallax{min-height:360px;height:58vh;margin:70px 0}}
+    @media(prefers-reduced-motion:reduce){.p-gallery-item{transition:none}}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <nav class="nav">
+    <div class="wrap">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo-icon.svg" alt="NOWHERE Studio" onerror="this.style.display='none'">
+        <span>NOWHERE</span>
+      </a>
+      <a href="index.html#trabalhos" class="nav-back">← Todos os Trabalhos</a>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="projectRoot">
+    <div class="loading-state">Carregando projeto…</div>
+  </main>
+
+  <div class="p-lightbox" id="projectLightbox" aria-hidden="true">
+    <button class="p-lightbox-close" id="projectLightboxClose" type="button" aria-label="Fechar">×</button>
+    <div class="p-lightbox-content" id="projectLightboxContent"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-bottom">
+        <span>© <span id="copyYear">2026</span> NOWHERE STUDIO. Todos os direitos reservados.</span>
+        <span>Welcome to the nowhere that means everything.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/main.js" defer></script>
+  <script>
+    class ProjectLoader {
+      constructor() {
+        this.projects = [];
+        this.currentProject = null;
+      }
+
+      async loadProjects() {
+        try {
+          const response = await fetch('portfolio.json');
+          if (!response.ok) throw new Error('Falha ao carregar portfolio.json');
+          this.projects = await response.json();
+          return this.projects;
+        } catch (error) {
+          console.error('Erro ao carregar projetos:', error);
+          this.showError('Não foi possível carregar o projeto. Verifique se portfolio.json está na raiz do site.');
+          return [];
+        }
+      }
+
+      getProjectId() {
+        return new URLSearchParams(window.location.search).get('id');
+      }
+
+      getCurrentProject() {
+        const id = this.getProjectId();
+        return this.projects.find(p => p.id === id) || this.projects[0];
+      }
+
+      getProjectIndex(project) {
+        return this.projects.findIndex(p => p.id === project.id);
+      }
+
+      getNextProject(project) {
+        const idx = this.getProjectIndex(project);
+        return this.projects[(idx + 1) % this.projects.length];
+      }
+
+      getPreviousProject(project) {
+        const idx = this.getProjectIndex(project);
+        return this.projects[(idx - 1 + this.projects.length) % this.projects.length];
+      }
+
+      updateMetaTags(project) {
+        document.title = `${project.titulo} — NOWHERE STUDIO`;
+
+        const ogImage = project.cover || project.thumb;
+        let ogImageMeta = document.querySelector('meta[property="og:image"]');
+        if (!ogImageMeta) {
+          ogImageMeta = document.createElement('meta');
+          ogImageMeta.setAttribute('property', 'og:image');
+          document.head.appendChild(ogImageMeta);
+        }
+        ogImageMeta.setAttribute('content', ogImage);
+      }
+
+      renderProject(project) {
+        const root = document.getElementById('projectRoot');
+        if (!root) return;
+
+        const next = this.getNextProject(project);
+        const previous = this.getPreviousProject(project);
+
+        this.updateMetaTags(project);
+
+        root.innerHTML = `
+          <section class="p-hero">
+            <div class="wrap">
+              <div class="p-eyebrow">
+                <span class="line"></span>
+                ${project.categoria}
+              </div>
+              <h1 class="p-title">${project.titulo}</h1>
+              <div class="p-meta-row">
+                <div class="p-meta">
+                  <span class="p-meta-label">Cliente</span>
+                  <span class="p-meta-value">${project.cliente}</span>
+                </div>
+                <div class="p-meta">
+                  <span class="p-meta-label">Categoria</span>
+                  <span class="p-meta-value">${project.categoria}</span>
+                </div>
+                <div class="p-meta">
+                  <span class="p-meta-label">Ano</span>
+                  <span class="p-meta-value">${project.ano}</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="wrap">
+            ${this.renderCover(project)}
+            ${this.renderParallax(project)}
+
+            <div class="p-body">
+              <div>
+                <label class="p-desc-title">Sobre o Projeto</label>
+                <p class="p-desc-text">${project.descricao}</p>
+              </div>
+              <div>
+                <label class="p-desc-title">Depoimento</label>
+                <p class="p-feedback">"${project.feedback}"</p>
+                <div class="p-feedback-author">
+                  <strong>${project.feedbackAutor}</strong> — ${project.feedbackCargo}
+                </div>
+              </div>
+            </div>
+
+            ${this.renderGallery(project)}
+            ${this.renderNavigation(project, next, previous)}
+          </div>
+        `;
+        document.dispatchEvent(new CustomEvent('portfolio:project-rendered',{detail:{project}}));
+        if(window.projectMediaEnhancer) window.projectMediaEnhancer();
+      }
+
+      renderCover(project) {
+        const cover = project.cover || project.thumb;
+        return `
+          <div class="p-cover">
+            <img
+              src="${cover}"
+              alt="${project.titulo}"
+              loading="eager"
+              onerror="this.src='assets/placeholder.jpg'"
+            >
+          </div>
+        `;
+      }
+
+      renderParallax(project) {
+        if (!project.parallax) return '';
+        const p = project.parallax;
+        if (!p.background && !p.middle && !p.foreground) return '';
+        return `
+          <section class="p-parallax" data-project-parallax aria-label="Apresentação visual">
+            ${p.background ? `<img class="p-parallax-layer p-parallax-background" data-parallax-speed="0.18" src="${p.background}" alt="" aria-hidden="true">` : ''}
+            ${p.middle ? `<img class="p-parallax-layer p-parallax-middle" data-parallax-speed="0.38" src="${p.middle}" alt="" aria-hidden="true">` : ''}
+            ${p.foreground ? `<img class="p-parallax-layer p-parallax-foreground" data-parallax-speed="0.68" src="${p.foreground}" alt="" aria-hidden="true">` : ''}
+          </section>
+        `;
+      }
+
+      renderGallery(project) {
+        if (!project.gallery || project.gallery.length === 0) return '';
+        return `
+          <div class="p-gallery" data-project-gallery>
+            ${project.gallery.map((src, i) => {
+              const isVideo = /\.mp4(?:\?.*)?$/i.test(src);
+              return isVideo ? `
+                <button class="p-gallery-item" type="button" data-media-src="${src}" data-media-type="video" aria-label="Abrir vídeo ${i + 1}">
+                  <video src="${src}" muted playsinline preload="metadata"></video><span class="p-gallery-play" aria-hidden="true"></span>
+                </button>` : `
+                <button class="p-gallery-item" type="button" data-media-src="${src}" data-media-type="image" aria-label="Abrir imagem ${i + 1}">
+                  <img src="${src}" alt="${project.titulo} - ${i + 1}" loading="lazy" onerror="this.closest('.p-gallery-item').style.display='none'">
+                </button>`;
+            }).join('')}
+          </div>
+        `;
+      }
+
+      renderNavigation(project, next, previous) {
+        return `
+          <div class="p-nav-projects">
+            <a href="index.html#trabalhos" class="p-nav-link">
+              ← Todos os Trabalhos
+            </a>
+            <a href="project.html?id=${encodeURIComponent(next.id)}" class="p-nav-link p-nav-link-next">
+              Próximo: ${next.titulo} →
+            </a>
+          </div>
+        `;
+      }
+
+      showError(message) {
+        const root = document.getElementById('projectRoot');
+        if (root) {
+          root.innerHTML = `<div class="loading-state">${message}</div>`;
+        }
+      }
+
+      async initialize() {
+        const projects = await this.loadProjects();
+        if (projects.length === 0) return;
+
+        const project = this.getCurrentProject();
+        if (!project) {
+          this.showError('Projeto não encontrado.');
+          return;
+        }
+
+        this.currentProject = project;
+        this.renderProject(project);
+      }
+    }
+
+    function initProjectLightbox() {
+      const lightbox=document.getElementById('projectLightbox'), content=document.getElementById('projectLightboxContent'), close=document.getElementById('projectLightboxClose');
+      if(!lightbox||!content||!close||lightbox.dataset.ready)return;
+      lightbox.dataset.ready='1';
+      const closeBox=()=>{lightbox.classList.remove('is-open');lightbox.setAttribute('aria-hidden','true');content.innerHTML='';document.body.style.overflow='';};
+      const openBox=(src,type)=>{content.innerHTML=type==='video'?`<video src="${src}" controls autoplay playsinline></video>`:`<img src="${src}" alt="Mídia ampliada">`;lightbox.classList.add('is-open');lightbox.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';};
+      document.addEventListener('click',e=>{const item=e.target.closest('.p-gallery-item');if(item){openBox(item.dataset.mediaSrc,item.dataset.mediaType);return}if(e.target===lightbox)closeBox();});
+      close.addEventListener('click',closeBox);
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lightbox.classList.contains('is-open'))closeBox();});
+    }
+    window.projectMediaEnhancer=initProjectLightbox;
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        const loader = new ProjectLoader();
+        loader.initialize();
+      });
+    } else {
+      const loader = new ProjectLoader();
+      loader.initialize();
+    }
+  </script>
+</body>
+</html>
