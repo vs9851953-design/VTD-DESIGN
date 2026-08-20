@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto — VTD DESIGN</title>
+
+  <style>
+    :root{
+      --black:#080808;
+      --white:#f5f5f5;
+      --muted:#8b8b8b;
+      --line:#242424;
+      --orange:#ff5a00;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--black);
+      color:var(--white);
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%}
+
+    .wrap{
+      width:min(1120px, calc(100% - 64px));
+      margin:0 auto;
+    }
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      height:72px;
+      display:flex;
+      align-items:center;
+      background:rgba(8,8,8,.88);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav .wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .nav-logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      letter-spacing:-.03em;
+    }
+
+    .nav-mark{
+      width:30px;
+      height:30px;
+      display:grid;
+      place-items:center;
+      background:var(--orange);
+      color:#111;
+      border-radius:5px;
+      font-weight:900;
+    }
+
+    .nav-back{
+      color:#aaa;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      transition:color .25s ease;
+    }
+
+    .nav-back:hover{color:var(--orange)}
+
+    .p-hero{
+      padding:100px 0 48px;
+    }
+
+    .p-meta{
+      color:var(--orange);
+      font-size:12px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      margin-bottom:18px;
+    }
+
+    .p-hero h1{
+      margin:0;
+      font-size:clamp(42px,7vw,92px);
+      line-height:.95;
+      letter-spacing:-.055em;
+      font-weight:800;
+      max-width:1000px;
+    }
+
+    .p-info{
+      display:flex;
+      gap:40px;
+      margin-top:34px;
+      padding-top:22px;
+      border-top:1px solid var(--line);
+      color:#aaa;
+      font-size:13px;
+    }
+
+    .p-cover{
+      overflow:hidden;
+      margin-top:42px;
+      background:#111;
+      border-radius:4px;
+    }
+
+    .p-cover img{
+      display:block;
+      width:100%;
+      height:auto;
+      opacity:0;
+      transform:scale(1.035);
+      animation:coverIn .9s cubic-bezier(.2,.7,.2,1) forwards;
+    }
+
+    @keyframes coverIn{
+      to{opacity:1;transform:scale(1)}
+    }
+
+    .p-body{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      padding:58px 0 30px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .p-desc-title{
+      display:block;
+      color:#666;
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      margin-bottom:14px;
+    }
+
+    .p-desc-text{
+      margin:0;
+      color:#d0d0d0;
+      font-size:16px;
+      line-height:1.7;
+      max-width:560px;
+    }
+
+    .p-feedback{
+      margin:0;
+      color:var(--white);
+      font-size:20px;
+      line-height:1.4;
+      font-weight:600;
+    }
+
+    .p-feedback-author{
+      margin-top:18px;
+      color:#777;
+      font-size:11px;
+    }
+
+    /* ── PARALLAX ────────────────────────────────────────── */
+    .p-parallax{
+      position:relative;
+      overflow:hidden;
+      height:520px;
+      margin-top:60px;
+      border-radius:4px;
+      background:#111;
+    }
+
+    .p-parallax-layer{
+      position:absolute;
+      inset:0;
+      will-change:transform;
+    }
+
+    .p-parallax-layer img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      pointer-events:none;
+      user-select:none;
+    }
+
+    .p-parallax-layer--bg{z-index:1}
+    .p-parallax-layer--mid{z-index:2}
+    .p-parallax-layer--fg{z-index:3}
+
+    /* ── GALLERY GRID ────────────────────────────────────── */
+    .p-gallery{
+      padding:70px 0 90px;
+    }
+
+    .p-gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+      gap:14px;
+    }
+
+    .p-gallery-thumb{
+      position:relative;
+      overflow:hidden;
+      background:#111;
+      border-radius:4px;
+      cursor:pointer;
+      aspect-ratio:16/10;
+      transform-style:preserve-3d;
+      will-change:transform;
+      transition:box-shadow .3s ease;
+    }
+
+    .p-gallery-thumb:hover{
+      box-shadow:0 12px 40px rgba(0,0,0,.6);
+    }
+
+    .p-gallery-thumb img,
+    .p-gallery-thumb video{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      pointer-events:none;
+      transition:opacity .5s ease;
+      opacity:0;
+    }
+
+    .p-gallery-thumb img.visible,
+    .p-gallery-thumb video.visible{
+      opacity:1;
+    }
+
+    .p-gallery-thumb-play{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      pointer-events:none;
+    }
+
+    .p-gallery-thumb-play svg{
+      width:40px;
+      height:40px;
+      opacity:.85;
+      filter:drop-shadow(0 2px 6px rgba(0,0,0,.6));
+    }
+
+    /* ── LIGHTBOX ────────────────────────────────────────── */
+    .p-lightbox{
+      position:fixed;
+      inset:0;
+      z-index:200;
+      background:rgba(0,0,0,.92);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      opacity:0;
+      visibility:hidden;
+      transition:opacity .3s ease, visibility .3s ease;
+      backdrop-filter:blur(8px);
+    }
+
+    .p-lightbox.is-open{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .p-lightbox-inner{
+      position:relative;
+      max-width:90vw;
+      max-height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .p-lightbox-inner img,
+    .p-lightbox-inner video{
+      max-width:90vw;
+      max-height:88vh;
+      border-radius:4px;
+      display:block;
+      object-fit:contain;
+    }
+
+    .p-lightbox-close{
+      position:fixed;
+      top:22px;
+      right:26px;
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      background:rgba(255,255,255,.08);
+      border-radius:50%;
+      border:none;
+      color:var(--white);
+      font-size:20px;
+      line-height:1;
+      transition:background .2s ease;
+      z-index:201;
+    }
+
+    .p-lightbox-close:hover{background:rgba(255,255,255,.18)}
+
+    .p-lightbox-nav{
+      position:fixed;
+      top:50%;
+      transform:translateY(-50%);
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      background:rgba(255,255,255,.08);
+      border-radius:50%;
+      border:none;
+      color:var(--white);
+      font-size:22px;
+      transition:background .2s ease;
+      z-index:201;
+    }
+
+    .p-lightbox-nav:hover{background:rgba(255,255,255,.18)}
+    .p-lightbox-nav--prev{left:18px}
+    .p-lightbox-nav--next{right:18px}
+
+    /* ── EXISTING (unchanged) ────────────────────────────── */
+    .p-nav-projects{
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      padding:30px 0 70px;
+      border-top:1px solid var(--line);
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+
+    .p-nav-link{transition:color .25s ease}
+    .p-nav-link:hover{color:var(--orange)}
+
+    .loading{
+      min-height:60vh;
+      display:grid;
+      place-items:center;
+      color:#777;
+    }
+
+    .project-error{
+      padding:120px 0;
+    }
+
+    .project-error h1{font-size:48px;margin:0 0 15px}
+    .project-error p{color:#888}
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:30px 0;
+      color:#666;
+      font-size:11px;
+    }
+
+    @media(max-width:700px){
+      .wrap{width:min(100% - 32px,1120px)}
+      .nav{height:62px}
+      .nav-back{font-size:10px}
+      .p-hero{padding:70px 0 30px}
+      .p-body{grid-template-columns:1fr;gap:38px}
+      .p-nav-projects{flex-direction:column}
+      .p-info{gap:20px}
+      .p-parallax{height:320px}
+      .p-gallery-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+      .p-lightbox-nav--prev{left:6px}
+      .p-lightbox-nav--next{right:6px}
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="wrap">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-mark">N</span>
+        <span>VTD DESIGN</span>
+      </a>
+      <a href="index.html#trabalhos" class="nav-back">← Todos os Trabalhos</a>
+    </div>
+  </nav>
+
+  <main id="projectRoot">
+    <div class="loading">Carregando projeto…</div>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="p-lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de mídia">
+    <button class="p-lightbox-close" id="lightboxClose" aria-label="Fechar">✕</button>
+    <button class="p-lightbox-nav p-lightbox-nav--prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+    <div class="p-lightbox-inner" id="lightboxInner"></div>
+    <button class="p-lightbox-nav p-lightbox-nav--next" id="lightboxNext" aria-label="Próximo">›</button>
+  </div>
+
+  <footer>
+    <div class="wrap">© 2026 VTD DESIGN.</div>
+  </footer>
+
+  <script>
+    /* ── LIGHTBOX STATE ─────────────────────────────────── */
+    const lightbox={
+      el:document.getElementById('lightbox'),
+      inner:document.getElementById('lightboxInner'),
+      items:[],
+      current:0,
+
+      open(items,index){
+        this.items=items;
+        this.current=index;
+        this.render();
+        this.el.classList.add('is-open');
+        document.body.style.overflow='hidden';
+      },
+
+      close(){
+        this.el.classList.remove('is-open');
+        document.body.style.overflow='';
+        const video=this.inner.querySelector('video');
+        if(video) video.pause();
+        this.inner.innerHTML='';
+      },
+
+      go(dir){
+        const video=this.inner.querySelector('video');
+        if(video) video.pause();
+        this.current=(this.current+dir+this.items.length)%this.items.length;
+        this.render();
+      },
+
+      render(){
+        const src=this.items[this.current];
+        const isVideo=/\.mp4$/i.test(src);
+        this.inner.innerHTML='';
+        if(isVideo){
+          const v=document.createElement('video');
+          v.src=src; v.controls=true; v.autoplay=true;
+          v.style.maxWidth='90vw'; v.style.maxHeight='88vh';
+          this.inner.appendChild(v);
+        } else {
+          const img=document.createElement('img');
+          img.src=src; img.alt='';
+          this.inner.appendChild(img);
+        }
+      }
+    };
+
+    document.getElementById('lightboxClose').addEventListener('click',()=>lightbox.close());
+    document.getElementById('lightboxPrev').addEventListener('click',()=>lightbox.go(-1));
+    document.getElementById('lightboxNext').addEventListener('click',()=>lightbox.go(1));
+    document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===lightbox.el) lightbox.close();});
+    document.addEventListener('keydown',e=>{
+      if(!lightbox.el.classList.contains('is-open')) return;
+      if(e.key==='Escape') lightbox.close();
+      if(e.key==='ArrowLeft') lightbox.go(-1);
+      if(e.key==='ArrowRight') lightbox.go(1);
+    });
+
+    /* ── PROJECT LOADER ─────────────────────────────────── */
+    class ProjectLoader {
+      constructor(){
+        this.projects=[];
+        this.currentProject=null;
+      }
+
+      async loadProjects(){
+        const response=await fetch('portfolio.json?cache=' + Date.now());
+        if(!response.ok) throw new Error('Não foi possível carregar portfolio.json');
+        this.projects=await response.json();
+      }
+
+      getProjectId(){
+        return new URLSearchParams(window.location.search).get('id');
+      }
+
+      getCurrentProject(){
+        const id=this.getProjectId();
+        return this.projects.find(project=>project.id===id);
+      }
+
+      createImage(src,alt){
+        const img=document.createElement('img');
+        img.src=src;
+        img.alt=alt;
+        img.loading='lazy';
+        img.addEventListener('error',()=>{
+          console.error('Imagem não encontrada:',src);
+          img.parentElement?.remove();
+        });
+        return img;
+      }
+
+      isVideo(src){
+        return /\.mp4$/i.test(src);
+      }
+
+      renderParallax(parallax){
+        const section=document.createElement('section');
+        section.className='p-parallax';
+        section.dataset.parallax='';
+
+        const layers=[
+          {cls:'p-parallax-layer--bg',src:parallax.background,speed:'0.18'},
+          {cls:'p-parallax-layer--mid',src:parallax.middle,speed:'0.10'},
+          {cls:'p-parallax-layer--fg',src:parallax.foreground,speed:'0.05'},
+        ];
+
+        layers.forEach(l=>{
+          const div=document.createElement('div');
+          div.className='p-parallax-layer '+l.cls;
+          div.dataset.parallaxSpeed=l.speed;
+          const img=document.createElement('img');
+          img.src=l.src; img.alt=''; img.draggable=false;
+          img.addEventListener('error',()=>{div.remove();});
+          div.appendChild(img);
+          section.appendChild(div);
+        });
+
+        return section;
+      }
+
+      renderGallery(project){
+        const srcs=project.gallery;
+        const section=document.createElement('section');
+        section.className='p-gallery';
+
+        const grid=document.createElement('div');
+        grid.className='p-gallery-grid';
+
+        srcs.forEach((src,i)=>{
+          const thumb=document.createElement('div');
+          thumb.className='p-gallery-thumb';
+
+          if(this.isVideo(src)){
+            const video=document.createElement('video');
+            video.src=src;
+            video.muted=true;
+            video.loop=true;
+            video.playsInline=true;
+            video.preload='metadata';
+            video.addEventListener('loadeddata',()=>video.classList.add('visible'));
+            thumb.appendChild(video);
+
+            // play icon overlay
+            const playOverlay=document.createElement('div');
+            playOverlay.className='p-gallery-thumb-play';
+            playOverlay.innerHTML=`<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="23" stroke="white" stroke-width="1.5" fill="rgba(0,0,0,.4)"/>
+              <polygon points="19,15 35,24 19,33" fill="white"/>
+            </svg>`;
+            thumb.appendChild(playOverlay);
+          } else {
+            const img=document.createElement('img');
+            img.src=src;
+            img.alt=`${project.titulo || 'Projeto'} — imagem ${i+1}`;
+            img.loading='lazy';
+            img.addEventListener('load',()=>img.classList.add('visible'));
+            img.addEventListener('error',()=>thumb.remove());
+            thumb.appendChild(img);
+          }
+
+          thumb.addEventListener('click',()=>lightbox.open(srcs,i));
+          grid.appendChild(thumb);
+        });
+
+        section.appendChild(grid);
+        return section;
+      }
+
+      renderProject(project){
+        const root=document.getElementById('projectRoot');
+
+        document.title=project.titulo + ' — VTD DESIGN';
+
+        const hero=document.createElement('section');
+        hero.className='p-hero';
+        hero.innerHTML=`
+          <div class="wrap">
+            <div class="p-meta">${project.categoria || ''}</div>
+            <h1>${project.titulo || ''}</h1>
+            <div class="p-info">
+              <span>${project.cliente || ''}</span>
+              <span>${project.ano || ''}</span>
+            </div>
+          </div>
+        `;
+
+        const wrap=document.createElement('div');
+        wrap.className='wrap';
+
+        if(project.cover){
+          const cover=document.createElement('div');
+          cover.className='p-cover';
+          cover.appendChild(this.createImage(project.cover,project.titulo || 'Capa do projeto'));
+          wrap.appendChild(cover);
+        }
+
+        const body=document.createElement('section');
+        body.className='p-body';
+
+        const description=document.createElement('div');
+        description.innerHTML=`
+          <span class="p-desc-title">Sobre o projeto</span>
+          <p class="p-desc-text">${project.descricao || ''}</p>
+        `;
+        body.appendChild(description);
+
+        if(project.feedback){
+          const feedback=document.createElement('div');
+          feedback.innerHTML=`
+            <span class="p-desc-title">Feedback</span>
+            <p class="p-feedback">"${project.feedback}"</p>
+            <div class="p-feedback-author">
+              ${project.feedbackAutor || ''}${project.feedbackCargo ? ' — ' + project.feedbackCargo : ''}
+            </div>
+          `;
+          body.appendChild(feedback);
+        } else if(project.feedbackAutor){
+          const context=document.createElement('div');
+          context.innerHTML=`
+            <span class="p-desc-title">Contexto</span>
+            <p class="p-feedback">${project.feedbackAutor}</p>
+            <div class="p-feedback-author">${project.feedbackCargo || ''}</div>
+          `;
+          body.appendChild(context);
+        }
+
+        wrap.appendChild(body);
+
+        // PARALLAX — render after p-body if field exists
+        if(project.parallax && project.parallax.background){
+          wrap.appendChild(this.renderParallax(project.parallax));
+        }
+
+        // GALLERY — grid with lightbox
+        if(Array.isArray(project.gallery) && project.gallery.length){
+          wrap.appendChild(this.renderGallery(project));
+        }
+
+        const index=this.projects.findIndex(p=>p.id===project.id);
+        const next=this.projects[(index+1)%this.projects.length];
+
+        const nav=document.createElement('nav');
+        nav.className='p-nav-projects';
+        nav.innerHTML=`
+          <a class="p-nav-link" href="index.html#trabalhos">← Todos os trabalhos</a>
+          ${next ? `<a class="p-nav-link" href="project.html?id=${encodeURIComponent(next.id)}">Próximo: ${next.titulo} →</a>` : ''}
+        `;
+        wrap.appendChild(nav);
+
+        root.replaceChildren(hero,wrap);
+
+        this.initScrollAnimations(root);
+
+        // initialise new features via animations.js API
+        if(window.portfolioAnimations){
+          if(window.portfolioAnimations.parallax) window.portfolioAnimations.parallax();
+          if(window.portfolioAnimations.tilt) window.portfolioAnimations.tilt();
+        }
+      }
+
+      initScrollAnimations(root){
+        const images=root.querySelectorAll('.p-gallery img');
+
+        if(!('IntersectionObserver' in window)){
+          images.forEach(img=>img.classList.add('visible'));
+          return;
+        }
+
+        const observer=new IntersectionObserver(entries=>{
+          entries.forEach(entry=>{
+            if(entry.isIntersecting){
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },{threshold:.12});
+
+        images.forEach(img=>observer.observe(img));
+      }
+
+      showError(message){
+        document.getElementById('projectRoot').innerHTML=`
+          <div class="wrap project-error">
+            <h1>Projeto não encontrado</h1>
+            <p>${message}</p>
+          </div>
+        `;
+      }
+
+      async initialize(){
+        try{
+          await this.loadProjects();
+          const project=this.getCurrentProject();
+
+          if(!project){
+            this.showError('O ID deste projeto não existe no portfolio.json.');
+            return;
+          }
+
+          this.renderProject(project);
+        }catch(error){
+          console.error(error);
+          this.showError('Erro ao carregar o portfolio.json. Verifique se o arquivo está na raiz do projeto.');
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded',()=>{
+      new ProjectLoader().initialize();
+    });
+  </script>
+
+  <script src="js/animations.js"></script>
+</body>
+</html>
