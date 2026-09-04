@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="NOWHERE STUDIO — portfólio de Motion Design, Design Gráfico e projetos visuais.">
+  <meta name="theme-color" content="#f4f1ec">
+  <title>NOWHERE STUDIO — Portfólio</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header class="topbar" id="topo">
+  <div class="shell nav-wrap">
+    <a class="brand" href="#topo"><img src="assets/logo-icon.svg" alt=""><span>NOWHERE</span></a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a><a href="#trajetoria">Trajetória</a><a href="#trabalhos">Portfólio</a><a href="#processo">Processo</a><a href="#feedbacks">Feedbacks</a>
+    </nav>
+    <a class="contact-pill" href="#contato">Contato</a>
+  </div>
+</header>
+
+<main>
+<section class="hero section-dark">
+  <div class="shell hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">MOTION · DESIGN · DIREÇÃO VISUAL</span>
+      <h1>Ideias que ganham<br><em>movimento e presença.</em></h1>
+      <p>Portfólio de projetos em Motion 2D, Motion 3D, apresentações, posts e experiências visuais.</p>
+      <div class="hero-actions"><a class="btn btn-accent" href="#trabalhos">Ver projetos</a><a class="btn btn-ghost" href="#contato">Falar comigo</a></div>
+    </div>
+    <div class="parallax-stage" id="parallaxStage" aria-label="Composição visual interativa">
+      <div class="parallax-card p1" data-depth="18"><img data-project-img="0" src="assets/placeholder.jpg" alt="Projeto em destaque"></div>
+      <div class="parallax-card p2" data-depth="-10"><span>MOTION<br>2D</span></div>
+      <div class="parallax-card p3" data-depth="10"><img data-project-img="1" src="assets/placeholder.jpg" alt="Projeto em destaque"></div>
+      <div class="parallax-card p4" data-depth="-16"><span>DESIGN<br>3D</span></div>
+      <div class="orb o1" data-depth="24"></div><div class="orb o2" data-depth="-18"></div>
+    </div>
+  </div>
+  <a href="#sobre" class="scroll-cue" aria-label="Ir para Sobre">↓</a>
+</section>
+
+<section class="section light" id="sobre">
+  <div class="shell about-grid">
+    <div class="about-visual reveal"><div class="frame"><img data-project-img="2" src="assets/placeholder.jpg" alt="Trabalho visual"></div></div>
+    <div class="about-copy reveal">
+      <span class="eyebrow brown">SOBRE O ESTÚDIO</span>
+      <h2>Visual forte.<br>Execução cuidadosa.</h2>
+      <p>NOWHERE é um portfólio focado em criação visual e movimento. A seleção reúne trabalhos para clientes, estudos autorais e projetos acadêmicos em diferentes formatos.</p>
+      <div class="stats"><div><strong id="projectCount">—</strong><span>Projetos</span></div><div><strong id="categoryCount">—</strong><span>Categorias</span></div><div><strong id="yearRange">—</strong><span>Período</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section career" id="trajetoria">
+  <div class="shell">
+    <div class="section-head center reveal"><span class="eyebrow brown">TRAJETÓRIA</span><h2>Uma evolução construída projeto a projeto</h2></div>
+    <div class="career-grid">
+      <article class="career-card reveal"><span>01</span><h3>Projetos acadêmicos</h3><p>Exploração de direção de arte, identidade visual, tipografia, apresentações e motion aplicada a briefings acadêmicos.</p></article>
+      <article class="career-card reveal"><span>02</span><h3>Projetos autorais</h3><p>Estudos de tracking, integração 3D, shaders, iluminação, composição e experimentação visual.</p></article>
+      <article class="career-card reveal"><span>03</span><h3>Trabalhos para clientes</h3><p>Peças para redes sociais, vídeos comerciais, campanhas, animação de marcas e apresentações institucionais.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section light" id="trabalhos">
+  <div class="shell">
+    <div class="section-head center reveal"><span class="eyebrow brown">PORTFÓLIO</span><h2>Projetos selecionados</h2><p>Filtre por categoria e abra qualquer projeto para ver os detalhes.</p></div>
+    <div class="filters" id="filters"></div>
+    <div class="projects-grid" id="projectsGrid"><div class="loading">Carregando projetos…</div></div>
+  </div>
+</section>
+
+<section class="section process" id="processo">
+  <div class="shell">
+    <div class="section-head center inverse reveal"><span class="eyebrow warm">PROCESSO</span><h2>Da ideia ao resultado</h2><p>Uma estrutura simples para transformar intenção em comunicação visual.</p></div>
+    <div class="process-grid"><div class="step reveal"><b>01</b><h3>Entender</h3><p>Objetivo, público, mensagem e referências.</p></div><div class="step reveal"><b>02</b><h3>Direcionar</h3><p>Conceito, linguagem e organização visual.</p></div><div class="step reveal"><b>03</b><h3>Criar</h3><p>Design, animação, composição e refinamento.</p></div><div class="step reveal"><b>04</b><h3>Entregar</h3><p>Finalização adequada ao formato e à aplicação.</p></div></div>
+  </div>
+</section>
+
+<section class="section light" id="feedbacks">
+  <div class="shell">
+    <div class="section-head center reveal"><span class="eyebrow brown">FEEDBACKS</span><h2>O que ficou registrado nos projetos</h2></div>
+    <div class="testimonials" id="testimonials"></div>
+  </div>
+</section>
+
+<section class="section latest" id="ultimos">
+  <div class="shell latest-shell">
+    <div class="latest-title reveal"><span class="eyebrow brown">RECENTES</span><h2>Últimos projetos<br>em carrossel</h2></div>
+    <div class="carousel-wrap reveal"><button class="car-btn prev" id="carPrev" aria-label="Anterior">←</button><div class="carousel" id="carousel"></div><button class="car-btn next" id="carNext" aria-label="Próximo">→</button></div>
+  </div>
+</section>
+</main>
+
+<footer id="contato">
+  <div class="shell footer-grid"><div><span class="eyebrow warm">CONTATO</span><h2>Tem um projeto em mente?</h2></div><div><p>Use seus links reais aqui quando quiser. A estrutura está pronta para Instagram, Behance, e-mail ou WhatsApp.</p><a class="btn btn-accent" href="mailto:contato@nowhere.studio">Enviar e-mail</a></div></div>
+  <div class="shell footer-bottom"><span>© <span id="year"></span> NOWHERE STUDIO</span><a href="#topo">Voltar ao topo ↑</a></div>
+</footer>
+<script src="js/site.js"></script>
+</body>
+</html>
