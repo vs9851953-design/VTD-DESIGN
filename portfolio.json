@@ -54,7 +54,7 @@
     "feedback": "Uma coleção de estudos pessoais desenvolvidos para experimentar diferentes possibilidades de composição e linguagem visual.",
     "feedbackAutor": "Projeto pessoal",
     "feedbackCargo": "Estudo experimental",
-    "thumb": "projects/posts-experimentais/gallery-1.jpg",
+    "thumb": "projects/posts-experimentais/thumb.jpg",
     "cover": "projects/posts-experimentais/cover.jpg",
     "gallery": [
       "projects/posts-experimentais/gallery-1.jpg",
@@ -74,7 +74,7 @@
     "feedback": "Conjunto de experimentos desenvolvido para testar diferentes abordagens visuais aplicadas ao formato de Stories.",
     "feedbackAutor": "Projeto pessoal",
     "feedbackCargo": "Estudo experimental",
-    "thumb": "projects/stories-experimentais/gallery-1.jpg",
+    "thumb": "projects/stories-experimentais/thumb.jpg",
     "cover": "projects/stories-experimentais/cover.jpg",
     "gallery": [
       "projects/stories-experimentais/gallery-1.jpg",
@@ -110,7 +110,7 @@
     "feedback": "A peça conseguiu apresentar os serviços de forma direta e dinâmica, com uma linguagem adequada para redes sociais.",
     "feedbackAutor": "Piscineiro",
     "feedbackCargo": "Cliente",
-    "thumb": "projects/stories-piscineiro/cover.jpg",
+    "thumb": "projects/stories-piscineiro/thumb.jpg",
     "cover": "projects/stories-piscineiro/cover.jpg",
     "gallery": [
       "projects/stories-piscineiro/gallery-1.mp4"
@@ -127,7 +127,7 @@
     "feedback": "A animação apresentou o novo projeto digital de forma clara e visualmente atrativa.",
     "feedbackAutor": "ATI Arquitetura",
     "feedbackCargo": "Cliente",
-    "thumb": "projects/ati-arquitetura/cover.jpg",
+    "thumb": "projects/ati-arquitetura/thumb.jpg",
     "cover": "projects/ati-arquitetura/cover.jpg",
     "gallery": [
       "projects/ati-arquitetura/gallery-1.mp4"
@@ -144,7 +144,7 @@
     "feedback": "O vídeo ficou muito acima do esperado e trouxe uma apresentação mais profissional para a divulgação do e-book.",
     "feedbackAutor": "Piscineiro",
     "feedbackCargo": "Cliente",
-    "thumb": "projects/video-comercial-piscineiro/cover.jpg",
+    "thumb": "projects/video-comercial-piscineiro/thumb.jpg",
     "cover": "projects/video-comercial-piscineiro/cover.jpg",
     "gallery": [
       "projects/video-comercial-piscineiro/gallery-1.mp4"
@@ -161,7 +161,7 @@
     "feedback": "A mistura entre a temática geek e a linguagem da Copa criou uma peça diferenciada e alinhada ao público da loja.",
     "feedbackAutor": "Loja Geek",
     "feedbackCargo": "Cliente",
-    "thumb": "projects/copa-loja-geek/cover.jpg",
+    "thumb": "projects/copa-loja-geek/thumb.jpg",
     "cover": "projects/copa-loja-geek/cover.jpg",
     "gallery": [
       "projects/copa-loja-geek/gallery-1.mp4"
@@ -178,7 +178,7 @@
     "feedback": "Experimento desenvolvido como estudo independente de composição e integração de elementos 3D.",
     "feedbackAutor": "Projeto pessoal",
     "feedbackCargo": "Estudo experimental",
-    "thumb": "projects/aplicacao-3d-cenario/cover.jpg",
+    "thumb": "projects/aplicacao-3d-cenario/thumb.jpg",
     "cover": "projects/aplicacao-3d-cenario/cover.jpg",
     "gallery": [
       "projects/aplicacao-3d-cenario/gallery-1.mp4"
@@ -195,7 +195,7 @@
     "feedback": "Experimento desenvolvido para estudar integração audiovisual e sincronização entre movimento, cena e som.",
     "feedbackAutor": "Projeto pessoal",
     "feedbackCargo": "Estudo experimental",
-    "thumb": "projects/implementacao-ambiencia-3d/cover.jpg",
+    "thumb": "projects/implementacao-ambiencia-3d/thumb.jpg",
     "cover": "projects/implementacao-ambiencia-3d/cover.jpg",
     "gallery": [
       "projects/implementacao-ambiencia-3d/gallery-1.mp4"
@@ -212,7 +212,7 @@
     "feedback": "Experimento desenvolvido para estudar física, movimento e integração de objetos 3D em cenas reais.",
     "feedbackAutor": "Projeto pessoal",
     "feedbackCargo": "Estudo experimental",
-    "thumb": "projects/teste-fisica/cover.jpg",
+    "thumb": "projects/teste-fisica/thumb.jpg",
     "cover": "projects/teste-fisica/cover.jpg",
     "gallery": [
       "projects/teste-fisica/gallery-1.mp4"
@@ -229,7 +229,7 @@
     "feedback": "Experimento desenvolvido para estudar iluminação e integração visual entre elementos 3D e ambientes reais.",
     "feedbackAutor": "Projeto pessoal",
     "feedbackCargo": "Estudo experimental",
-    "thumb": "projects/teste-luzes-shaders/cover.jpg",
+    "thumb": "projects/teste-luzes-shaders/thumb.jpg",
     "cover": "projects/teste-luzes-shaders/cover.jpg",
     "gallery": [
       "projects/teste-luzes-shaders/gallery-1.mp4"
@@ -246,7 +246,7 @@
     "feedback": "Experimento desenvolvido para estudar tracking 3D, composição tipográfica e integração de informações em imagens aéreas.",
     "feedbackAutor": "Projeto pessoal",
     "feedbackCargo": "Estudo experimental",
-    "thumb": "projects/tracking-3d-cajazeiras/cover.jpg",
+    "thumb": "projects/tracking-3d-cajazeiras/thumb.jpg",
     "cover": "projects/tracking-3d-cajazeiras/cover.jpg",
     "gallery": [
       "projects/tracking-3d-cajazeiras/gallery-1.mp4"
@@ -263,7 +263,7 @@
     "feedback": "As peças apresentaram uma identidade visual consistente e ajudaram a fortalecer a comunicação da agência nas redes sociais.",
     "feedbackAutor": "SD Agence",
     "feedbackCargo": "Projeto colaborativo",
-    "thumb": "projects/sd-agence/gallery-1.jpg",
+    "thumb": "projects/sd-agence/thumb.jpg",
     "cover": "projects/sd-agence/cover.jpg",
     "gallery": [
       "projects/sd-agence/gallery-1.jpg",
@@ -289,7 +289,7 @@
     "feedback": "As peças ajudaram a manter uma comunicação visual mais organizada e consistente nas redes sociais.",
     "feedbackAutor": "Sara Sheila",
     "feedbackCargo": "Cliente",
-    "thumb": "projects/sara-sheila/gallery-1.jpg",
+    "thumb": "projects/sara-sheila/thumb.jpg",
     "cover": "projects/sara-sheila/cover.jpg",
     "gallery": [
       "projects/sara-sheila/gallery-1.jpg",
