@@ -18,7 +18,8 @@
       "projects/rebranding-john-wick/gallery-4.jpg",
       "projects/rebranding-john-wick/gallery-5.jpg",
       "projects/rebranding-john-wick/gallery-6.jpg"
-    ]
+    ],
+    "conceptImage": "projects/rebranding-john-wick/concept-1.jpg"
   },
   {
     "id": "pag-facilitado",
@@ -40,7 +41,8 @@
       "projects/pag-facilitado/gallery-5.jpg",
       "projects/pag-facilitado/gallery-6.jpg",
       "projects/pag-facilitado/gallery-7.jpg"
-    ]
+    ],
+    "conceptImage": "projects/pag-facilitado/concept-1.jpg"
   },
   {
     "id": "posts-experimentais",
@@ -59,7 +61,8 @@
       "projects/posts-experimentais/gallery-2.jpg",
       "projects/posts-experimentais/gallery-3.jpg",
       "projects/posts-experimentais/gallery-4.jpg"
-    ]
+    ],
+    "conceptImage": "projects/posts-experimentais/concept-1.jpg"
   },
   {
     "id": "stories-experimentais",
@@ -77,7 +80,8 @@
       "projects/stories-experimentais/gallery-1.jpg",
       "projects/stories-experimentais/gallery-2.jpg",
       "projects/stories-experimentais/gallery-3.jpg"
-    ]
+    ],
+    "conceptImage": "projects/stories-experimentais/concept-1.jpg"
   },
   {
     "id": "rastrek",
@@ -93,7 +97,8 @@
     "cover": "projects/rastrek/cover.jpg",
     "gallery": [
       "projects/rastrek/gallery-1.mp4"
-    ]
+    ],
+    "conceptImage": "projects/rastrek/concept-1.jpg"
   },
   {
     "id": "stories-piscineiro",
@@ -109,7 +114,8 @@
     "cover": "projects/stories-piscineiro/cover.jpg",
     "gallery": [
       "projects/stories-piscineiro/gallery-1.mp4"
-    ]
+    ],
+    "conceptImage": "projects/stories-piscineiro/concept-1.jpg"
   },
   {
     "id": "ati-arquitetura",
@@ -125,7 +131,8 @@
     "cover": "projects/ati-arquitetura/cover.jpg",
     "gallery": [
       "projects/ati-arquitetura/gallery-1.mp4"
-    ]
+    ],
+    "conceptImage": "projects/ati-arquitetura/concept-1.jpg"
   },
   {
     "id": "video-comercial-piscineiro",
@@ -141,7 +148,8 @@
     "cover": "projects/video-comercial-piscineiro/cover.jpg",
     "gallery": [
       "projects/video-comercial-piscineiro/gallery-1.mp4"
-    ]
+    ],
+    "conceptImage": "projects/video-comercial-piscineiro/concept-1.jpg"
   },
   {
     "id": "copa-loja-geek",
@@ -157,7 +165,8 @@
     "cover": "projects/copa-loja-geek/cover.jpg",
     "gallery": [
       "projects/copa-loja-geek/gallery-1.mp4"
-    ]
+    ],
+    "conceptImage": "projects/copa-loja-geek/concept-1.jpg"
   },
   {
     "id": "aplicacao-3d-cenario",
@@ -173,7 +182,8 @@
     "cover": "projects/aplicacao-3d-cenario/cover.jpg",
     "gallery": [
       "projects/aplicacao-3d-cenario/gallery-1.mp4"
-    ]
+    ],
+    "conceptImage": "projects/aplicacao-3d-cenario/concept-1.jpg"
   },
   {
     "id": "implementacao-ambiencia-3d",
@@ -189,7 +199,8 @@
     "cover": "projects/implementacao-ambiencia-3d/cover.jpg",
     "gallery": [
       "projects/implementacao-ambiencia-3d/gallery-1.mp4"
-    ]
+    ],
+    "conceptImage": "projects/implementacao-ambiencia-3d/concept-1.jpg"
   },
   {
     "id": "teste-fisica",
@@ -205,7 +216,8 @@
     "cover": "projects/teste-fisica/cover.jpg",
     "gallery": [
       "projects/teste-fisica/gallery-1.mp4"
-    ]
+    ],
+    "conceptImage": "projects/teste-fisica/concept-1.jpg"
   },
   {
     "id": "teste-luzes-shaders",
@@ -221,7 +233,8 @@
     "cover": "projects/teste-luzes-shaders/cover.jpg",
     "gallery": [
       "projects/teste-luzes-shaders/gallery-1.mp4"
-    ]
+    ],
+    "conceptImage": "projects/teste-luzes-shaders/concept-1.jpg"
   },
   {
     "id": "tracking-3d-cajazeiras",
@@ -237,7 +250,8 @@
     "cover": "projects/tracking-3d-cajazeiras/cover.jpg",
     "gallery": [
       "projects/tracking-3d-cajazeiras/gallery-1.mp4"
-    ]
+    ],
+    "conceptImage": "projects/tracking-3d-cajazeiras/concept-1.jpg"
   },
   {
     "id": "sd-agence",
@@ -262,7 +276,8 @@
       "background": "projects/sd-agence/parallax/background.jpg",
       "middle": "projects/sd-agence/parallax/middle.png",
       "foreground": "projects/sd-agence/parallax/foreground.png"
-    }
+    },
+    "conceptImage": "projects/sd-agence/concept-1.jpg"
   },
   {
     "id": "sara-sheila",
@@ -281,6 +296,7 @@
       "projects/sara-sheila/gallery-2.jpg",
       "projects/sara-sheila/gallery-3.jpg",
       "projects/sara-sheila/gallery-4.jpg"
-    ]
+    ],
+    "conceptImage": "projects/sara-sheila/concept-1.jpg"
   }
 ]
