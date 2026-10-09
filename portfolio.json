@@ -254,30 +254,30 @@
     "conceptImage": "projects/tracking-3d-cajazeiras/concept-1.jpg"
   },
   {
-    "id": "sd-agence",
-    "titulo": "SD Agence",
+    "id": "sd-agency",
+    "titulo": "SD Agency",
     "categoria": "Projetos para Clientes",
     "ano": "2025",
-    "cliente": "SD Agence",
+    "cliente": "SD Agency",
     "descricao": "Conjunto de peças desenvolvidas para uma agência, explorando uma linguagem visual mais elaborada e consistente para conteúdo de redes sociais.",
     "feedback": "As peças apresentaram uma identidade visual consistente e ajudaram a fortalecer a comunicação da agência nas redes sociais.",
-    "feedbackAutor": "SD Agence",
+    "feedbackAutor": "SD Agency",
     "feedbackCargo": "Projeto colaborativo",
-    "thumb": "projects/sd-agence/thumb.jpg",
-    "cover": "projects/sd-agence/cover.jpg",
+    "thumb": "projects/sd-agency/thumb.jpg",
+    "cover": "projects/sd-agency/cover.jpg",
     "gallery": [
-      "projects/sd-agence/gallery-1.jpg",
-      "projects/sd-agence/gallery-2.jpg",
-      "projects/sd-agence/gallery-3.jpg",
-      "projects/sd-agence/gallery-4.jpg",
-      "projects/sd-agence/gallery-5.jpg"
+      "projects/sd-agency/gallery-1.jpg",
+      "projects/sd-agency/gallery-2.jpg",
+      "projects/sd-agency/gallery-3.jpg",
+      "projects/sd-agency/gallery-4.jpg",
+      "projects/sd-agency/gallery-5.jpg"
     ],
     "parallax": {
       "background": "projects/sd-agence/parallax/background.jpg",
       "middle": "projects/sd-agence/parallax/middle.png",
       "foreground": "projects/sd-agence/parallax/foreground.png"
     },
-    "conceptImage": "projects/sd-agence/concept-1.jpg"
+    "conceptImage": "projects/sd-agency/concept-1.jpg"
   },
   {
     "id": "sara-sheila",
