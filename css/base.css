@@ -81,10 +81,12 @@ a {
 }
 
 .logo img {
-  width: 28px;
-  height: 28px;
+  width: auto;
+  height: 42px;
+  max-width: 190px;
   object-fit: contain;
   display: block;
+  flex-shrink: 0;
   transition: transform 0.35s var(--ease);
 }
 
