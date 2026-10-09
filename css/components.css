@@ -177,3 +177,14 @@
     transform: translateY(0);
   }
 }
+
+/* ===== AJUSTE DOS BOTÕES DE CONTATO ===== */
+#contato .cta-button,
+#contato a {
+  box-sizing: border-box;
+}
+
+#contato .cta-button + .cta-button,
+#contato a + a {
+  margin-left: 12px;
+}
